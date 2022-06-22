@@ -27,3 +27,4 @@ jobs:
       - name: Run Python Files
         run: |
           python ./matrix_pages/${{ matrix.py-files }}.py
+          cat github_output.txt >> $GITHUB_STEP_SUMMARY
