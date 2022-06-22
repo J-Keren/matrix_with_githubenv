@@ -32,6 +32,7 @@ jobs:
           python ./matrix_pages/${{ matrix.py-files }}.py
           cat github_output.txt >> $GHA_SUMMARY
   get-env-var:
+    runs-on: ubuntu-latest
     steps:
       - name: env var to summary
         run: | 
