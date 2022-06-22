@@ -3,6 +3,9 @@ name: Create matrix run
 on:
   workflow_dispatch:
 
+env: 
+  GHA_SUMMARY
+
 jobs:
   run-python-files:
     runs-on: ubuntu-latest
@@ -27,4 +30,12 @@ jobs:
       - name: Run Python Files
         run: |
           python ./matrix_pages/${{ matrix.py-files }}.py
-          cat github_output.txt >> $GITHUB_STEP_SUMMARY
+          cat github_output.txt >> $GHA_SUMMARY
+  get-env-var:
+    steps:
+      - name: env var to summary
+        run: | 
+          echo $GHA_SUMMARY >> $GITHUB_STEP_SUMMARY
+
+  
+
