@@ -16,15 +16,16 @@ jobs:
         - a
         - b
         - c
+
   steps:
     - name: checkout
-    uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
-     - name: setup python
-            uses: actions/setup-python@v2
-            with:
-              python-version: 3.9 #install the python needed
-    
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9 #install the python needed
+
     - name: Run Python Files
-    run: |
-      python ./matrix_pages/{matrix.py-files}.py
+      run: |
+        python ./matrix_pages/{matrix.py-files}.py
