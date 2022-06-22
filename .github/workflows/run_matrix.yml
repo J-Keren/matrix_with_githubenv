@@ -1,15 +1,12 @@
 name: Create matrix run
 
-defaults:
-  run:
-    shell: bash -leo pipefail {0}
-
 on:
   workflow_dispatch:
 
 jobs:
   build: 
     runs-on: ubuntu-latest
+
   strategy:
     matrix:
       py-files:
@@ -18,6 +15,7 @@ jobs:
         - c
 
   steps:
+
     - name: checkout
       uses: actions/checkout@v3
 
