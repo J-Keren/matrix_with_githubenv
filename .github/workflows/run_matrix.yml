@@ -26,4 +26,4 @@ jobs:
   
       - name: Run Python Files
         run: |
-          python ./matrix_pages/{matrix.py-files}.py
+          python ./matrix_pages/${{ matrix.py-files }.py
